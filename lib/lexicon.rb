@@ -8,6 +8,12 @@ class Lexicon
 			"go" => :verb, "stop" => :verb, "kill" => :verb, "eat" => :verb,
       "the" => :stop, "in" => :stop, "of" => :stop, "from" => :stop, "at" => :stop, "it" => :stop,
       "door" => :noun, "bear" => :noun, "princess" => :noun, "cabinet" => :noun }
+
+    word_list = []
+
+    @pairs.each do |pair|
+      word_list << Pair.new(pair[1], pair[0])
+    end  
  
 	end
 
@@ -33,5 +39,7 @@ class Lexicon
 		end
 		sentence
 	end
+
+
 
 end
