@@ -1,19 +1,18 @@
-class Lexicon
+require_relative './lexicon/parser.rb'
 
-	Pair = Struct.new(:token, :word)
+Pair = Struct.new(:token, :word)
+
+class Lexicon
 
 	def initialize()
 
 		@pairs = { "north" => :direction, "south" => :direction, "east" => :direction, "west" => :direction,
 			"go" => :verb, "stop" => :verb, "kill" => :verb, "eat" => :verb,
       "the" => :stop, "in" => :stop, "of" => :stop, "from" => :stop, "at" => :stop, "it" => :stop,
-      "door" => :noun, "bear" => :noun, "princess" => :noun, "cabinet" => :noun }
+      "door" => :noun, "bear" => :noun, "princess" => :noun, "cabinet" => :noun, "room" => :noun }
 
-    word_list = []
-
-    @pairs.each do |pair|
-      word_list << Pair.new(pair[1], pair[0])
-    end  
+   # @structs = []
+   # @pairs.each { |pair| @structs << Pair.new(pair[1], pair[0]) }
  
 	end
 
@@ -39,7 +38,5 @@ class Lexicon
 		end
 		sentence
 	end
-
-
 
 end
